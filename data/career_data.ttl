@@ -1,0 +1,3737 @@
+@prefix : <http://example.org/skillmap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:CareerRole rdf:type rdf:Property .
+:Skill rdf:type rdf:Class .
+:Employer rdf:type rdf:Class .
+:JobPosting rdf:type rdf:Class .
+:Applicant rdf:type rdf:Class .
+:Resume rdf:type rdf:Class .
+:Application rdf:type rdf:Class .
+:Education rdf:type rdf:Class .
+:Experience rdf:type rdf:Class .
+:Location rdf:type rdf:Class .
+
+# Skills
+:Python a :Skill ; :skillName "Python Programming" .
+:SQL a :Skill ; :skillName "SQL & Databases" .
+:Excel a :Skill ; :skillName "Microsoft Excel" .
+:DataVisualization a :Skill ; :skillName "Data Visualization" .
+:Figma a :Skill ; :skillName "Figma Design" .
+:UserResearch a :Skill ; :skillName "User Research" .
+:Wireframing a :Skill ; :skillName "Wireframing" .
+:JavaScript a :Skill ; :skillName "JavaScript" .
+:HTML a :Skill ; :skillName "HTML" .
+:CSS a :Skill ; :skillName "CSS" .
+:React a :Skill ; :skillName "React" .
+:NodeJS a :Skill ; :skillName "Node.js" .
+:Communication a :Skill ; :skillName "Communication" .
+:Teamwork a :Skill ; :skillName "Teamwork" .
+:ProblemSolving a :Skill ; :skillName "Problem Solving" .
+:ProjectManagement a :Skill ; :skillName "Project Management" .
+:SQLServer a :Skill ; :skillName "Microsoft SQL Server" .
+:Tableau a :Skill ; :skillName "Tableau" .
+:PowerBI a :Skill ; :skillName "Power BI" .
+:MachineLearning a :Skill ; :skillName "Machine Learning" .
+:ProductDesign a :Skill ; :skillName "Product Design" .
+:CustomerSupport a :Skill ; :skillName "Customer Support" .
+:DesignThinking a :Skill ; :skillName "Design Thinking" .
+:StakeholderManagement a :Skill ; :skillName "Stakeholder Management" .
+:DigitalMarketing a :Skill ; :skillName "Digital Marketing" .
+:HumanResources a :Skill ; :skillName "Human Resources" .
+:CustomerSuccess a :Skill ; :skillName "Customer Success" .
+:HRManagement a :Skill ; :skillName "HR Management" .
+:DevOps a :Skill ; :skillName "DevOps" .
+:Testing a :Skill ; :skillName "Software Testing" .
+:CloudArchitecture a :Skill ; :skillName "Cloud Architecture" .
+:DataEngineering a :Skill ; :skillName "Data Engineering" .
+:LegalCompliance a :Skill ; :skillName "Legal Compliance" .
+:Sales a :Skill ; :skillName "Sales" .
+:FinancialModeling a :Skill ; :skillName "Financial Modeling" .
+:Recruiting a :Skill ; :skillName "Recruiting" .
+:Training a :Skill ; :skillName "Training" .
+:Leadership a :Skill ; :skillName "Leadership" .
+:UserExperience a :Skill ; :skillName "User Experience" .
+:BusinessAnalysis a :Skill ; :skillName "Business Analysis" .
+:BusinessAnalyst a :Skill ; :skillName "Business Analysis" .
+:EmployerBranding a :Skill ; :skillName "Employer Branding" .
+:Accessibility a :Skill ; :skillName "Accessibility" .
+:PerformanceManagement a :Skill ; :skillName "Performance Management" .
+:DataOps a :Skill ; :skillName "Data Operations" .
+:Security a :Skill ; :skillName "Security" .
+
+# Career Roles
+:DataAnalyst rdf:type :CareerRole ;
+    :roleName "Data Analyst" ;
+    :requiresSkill :Python, :SQL, :Excel, :DataVisualization, :Communication .
+
+:UIUXDesigner rdf:type :CareerRole ;
+    :roleName "UI/UX Designer" ;
+    :requiresSkill :Figma, :UserResearch, :Wireframing, :Communication, :Teamwork .
+
+:FullStackDeveloper rdf:type :CareerRole ;
+    :roleName "Full Stack Developer" ;
+    :requiresSkill :HTML, :CSS, :JavaScript, :React, :NodeJS, :ProblemSolving .
+
+:ProductManager rdf:type :CareerRole ;
+    :roleName "Product Manager" ;
+    :requiresSkill :ProjectManagement, :Communication, :Teamwork, :ProductDesign .
+
+:BusinessAnalyst rdf:type :CareerRole ;
+    :roleName "Business Analyst" ;
+    :requiresSkill :Excel, :SQL, :Communication, :ProblemSolving, :ProjectManagement .
+
+# Employers
+:Company_SkylineTech a :Employer ;
+    :companyName "Skyline Technologies" ;
+    :industry "Software Development" ;
+    :companyWebsite <https://www.skylinetech.example> ;
+    :headquarters "Jakarta, Indonesia" .
+
+:Company_CareerLaunch a :Employer ;
+    :companyName "CareerLaunch" ;
+    :industry "Career Services" ;
+    :companyWebsite <https://www.careerlaunch.example> ;
+    :headquarters "Bali, Indonesia" .
+
+:Company_EcoInsight a :Employer ;
+    :companyName "EcoInsight Data" ;
+    :industry "Sustainability Analytics" ;
+    :companyWebsite <https://www.ecoinsight.example> ;
+    :headquarters "Surabaya, Indonesia" .
+
+:Company_DesignHive a :Employer ;
+    :companyName "Design Hive" ;
+    :industry "Digital Design" ;
+    :companyWebsite <https://www.designhive.example> ;
+    :headquarters "Bandung, Indonesia" .
+
+# Locations
+:Location_Jakarta a :Location ;
+    :city "Jakarta" ;
+    :country "Indonesia" .
+
+:Location_Bali a :Location ;
+    :city "Bali" ;
+    :country "Indonesia" .
+
+:Location_Surabaya a :Location ;
+    :city "Surabaya" ;
+    :country "Indonesia" .
+
+:Location_Bandung a :Location ;
+    :city "Bandung" ;
+    :country "Indonesia" .
+
+# Job Postings
+:Job_1234 a :JobPosting ;
+    :jobTitle "Junior Data Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Analyze business performance metrics, generate reports, and support decision-making with data." ;
+    :requiredSkill :Python, :SQL, :Excel ;
+    :preferredSkill :Tableau, :PowerBI ;
+    :vacancyCount 2 ;
+    :datePosted "2025-05-01"^^xsd:date ;
+    :applicationDeadline "2025-05-30"^^xsd:date ;
+    :salaryRange "Rp 7,000,000 - Rp 10,000,000" .
+
+:Job_2345 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Design user interfaces and prototypes for mobile and web applications with a focus on accessibility." ;
+    :requiredSkill :Figma, :UserResearch, :Wireframing ;
+    :preferredSkill :Communication, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-03"^^xsd:date ;
+    :applicationDeadline "2025-05-28"^^xsd:date ;
+    :salaryRange "Rp 9,500,000 - Rp 12,000,000" .
+
+:Job_3456 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Develop web applications and internal tools using modern frontend and backend technologies." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 3 ;
+    :datePosted "2025-05-05"^^xsd:date ;
+    :applicationDeadline "2025-06-10"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_4567 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Lead product planning, stakeholder communication, and launch execution for career marketplace features." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :ProductDesign, :BusinessAnalyst ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-07"^^xsd:date ;
+    :applicationDeadline "2025-06-05"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_5678 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Gather requirements, analyze business processes, and translate data into actionable insights." ;
+    :requiredSkill :Excel, :SQL, :Communication ;
+    :preferredSkill :ProjectManagement, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2025-05-10"^^xsd:date ;
+    :applicationDeadline "2025-06-08"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6789 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Develop predictive models, maintain data pipelines, and deliver insights to stakeholders in sustainability initiatives." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-12"^^xsd:date ;
+    :applicationDeadline "2025-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 18,000,000" .
+
+:Job_7890 a :JobPosting ;
+    :jobTitle "Digital Marketing Specialist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Plan and execute digital campaigns, analyze performance metrics, and optimize marketing funnels for career services." ;
+    :requiredSkill :DigitalMarketing, :Communication, :StakeholderManagement ;
+    :preferredSkill :DataVisualization, :CustomerSuccess ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-14"^^xsd:date ;
+    :applicationDeadline "2025-06-10"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 12,000,000" .
+
+:Job_8901 a :JobPosting ;
+    :jobTitle "Talent Acquisition Specialist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Manage end-to-end recruitment, build talent pipelines, and improve hiring processes for engineering and product teams." ;
+    :requiredSkill :HumanResources, :Communication, :StakeholderManagement ;
+    :preferredSkill :HRManagement, :LegalCompliance ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-15"^^xsd:date ;
+    :applicationDeadline "2025-06-12"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 14,000,000" .
+
+:Job_9012 a :JobPosting ;
+    :jobTitle "Customer Success Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Own customer onboarding, retention programs, and long-term success metrics for platform clients." ;
+    :requiredSkill :CustomerSuccess, :Communication, :Teamwork ;
+    :preferredSkill :ProductDesign, :Sales ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-16"^^xsd:date ;
+    :applicationDeadline "2025-06-14"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 15,000,000" .
+
+:Job_0123 a :JobPosting ;
+    :jobTitle "Sustainability Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Measure environmental impact, forecast sustainability scenarios, and support reporting for green financing." ;
+    :requiredSkill :Excel, :DataEngineering, :BusinessAnalyst ;
+    :preferredSkill :MachineLearning, :EthicalAI ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-18"^^xsd:date ;
+    :applicationDeadline "2025-06-20"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 16,000,000" .
+
+:Job_1123 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Remote" ;
+    :jobDescription "Build user-facing interfaces, collaborate with design teams, and ensure responsive web experiences." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Communication, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2025-05-20"^^xsd:date ;
+    :applicationDeadline "2025-06-22"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 14,000,000" .
+
+:Job_1224 a :JobPosting ;
+    :jobTitle "Backend Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Design scalable APIs, integrate databases, and maintain backend services for enterprise platforms." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 2 ;
+    :datePosted "2025-05-22"^^xsd:date ;
+    :applicationDeadline "2025-06-25"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 17,000,000" .
+
+:Job_1325 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Lead user research studies, insights workshops, and usability evaluations for client products." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-24"^^xsd:date ;
+    :applicationDeadline "2025-06-28"^^xsd:date ;
+    :salaryRange "Rp 10,500,000 - Rp 13,500,000" .
+
+:Job_1426 a :JobPosting ;
+    :jobTitle "HR Business Partner" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Partner with business teams to drive employee engagement, performance development, and hiring strategy." ;
+    :requiredSkill :HumanResources, :StakeholderManagement, :Communication ;
+    :preferredSkill :HRManagement, :ProjectManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-26"^^xsd:date ;
+    :applicationDeadline "2025-07-01"^^xsd:date ;
+    :salaryRange "Rp 12,500,000 - Rp 16,000,000" .
+
+:Job_1527 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Develop test plans, automate regression suites, and ensure product quality across releases." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :SoftwareEngineering ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-28"^^xsd:date ;
+    :applicationDeadline "2025-07-03"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 14,000,000" .
+
+:Job_1628 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Construct and optimize data architectures, ETL pipelines, and data storage solutions for sustainability analytics." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :MachineLearning ;
+    :vacancyCount 1 ;
+    :datePosted "2025-05-30"^^xsd:date ;
+    :applicationDeadline "2025-07-05"^^xsd:date ;
+    :salaryRange "Rp 13,500,000 - Rp 17,500,000" .
+
+:Job_1729 a :JobPosting ;
+    :jobTitle "Learning Experience Specialist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Design learner journeys, author training content, and measure learning outcomes for professional development programs." ;
+    :requiredSkill :ProductDesign, :Communication, :ResearchCommunication ;
+    :preferredSkill :UserExperience, :ProjectManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-01"^^xsd:date ;
+    :applicationDeadline "2025-07-08"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 13,000,000" .
+
+:Job_1830 a :JobPosting ;
+    :jobTitle "Corporate Strategy Analyst" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Support strategic planning, market research, and financial modeling for new service offerings." ;
+    :requiredSkill :BusinessAnalyst, :Communication, :ProblemSolving ;
+    :preferredSkill :ProjectManagement, :DigitalMarketing ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-02"^^xsd:date ;
+    :applicationDeadline "2025-07-10"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 18,000,000" .
+
+:Job_1931 a :JobPosting ;
+    :jobTitle "UX Writer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Create clear product copy, microcopy, and UX content aligned with user flows and brand voice." ;
+    :requiredSkill :Communication, :DesignThinking, :UserResearch ;
+    :preferredSkill :Figma, :ProductDesign ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-04"^^xsd:date ;
+    :applicationDeadline "2025-07-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 12,500,000" .
+
+:Job_2032 a :JobPosting ;
+    :jobTitle "Customer Support Specialist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Provide customer assistance, troubleshoot platform issues, and ensure excellent service for job seekers." ;
+    :requiredSkill :CustomerSupport, :Communication, :Teamwork ;
+    :preferredSkill :CustomerSuccess, :DigitalMarketing ;
+    :vacancyCount 2 ;
+    :datePosted "2025-06-06"^^xsd:date ;
+    :applicationDeadline "2025-07-20"^^xsd:date ;
+    :salaryRange "Rp 8,500,000 - Rp 11,000,000" .
+
+:Job_2133 a :JobPosting ;
+    :jobTitle "Cloud Solutions Architect" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Architect cloud solutions for analytics workloads, ensure reliability, and improve system resilience." ;
+    :requiredSkill :CloudArchitecture, :DevOps, :ProblemSolving ;
+    :preferredSkill :DataEngineering, :Testing ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-08"^^xsd:date ;
+    :applicationDeadline "2025-07-22"^^xsd:date ;
+    :salaryRange "Rp 16,000,000 - Rp 20,000,000" .
+
+:Job_2234 a :JobPosting ;
+    :jobTitle "Sales Enablement Coordinator" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Contract" ;
+    :jobDescription "Support the sales team with training resources, content creation, and customer engagement materials." ;
+    :requiredSkill :Sales, :Communication, :ProjectManagement ;
+    :preferredSkill :DigitalMarketing, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-10"^^xsd:date ;
+    :applicationDeadline "2025-07-25"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 13,000,000" .
+
+:Job_2335 a :JobPosting ;
+    :jobTitle "Learning Operations Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Analyze learner engagement, maintain course operations, and improve the delivery of training programs." ;
+    :requiredSkill :DataVisualization, :ResearchCommunication, :ProjectManagement ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-12"^^xsd:date ;
+    :applicationDeadline "2025-07-30"^^xsd:date ;
+    :salaryRange "Rp 11,500,000 - Rp 14,500,000" .
+
+:Job_2436 a :JobPosting ;
+    :jobTitle "Workforce Planning Analyst" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Analyze workforce trends, build headcount models, and support strategic talent planning." ;
+    :requiredSkill :BusinessAnalyst, :Excel, :Communication ;
+    :preferredSkill :StakeholderManagement, :FinancialModeling ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-14"^^xsd:date ;
+    :applicationDeadline "2025-07-28"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 16,500,000" .
+
+:Job_2537 a :JobPosting ;
+    :jobTitle "AI Product Owner" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Define product requirements, prioritize AI features, and coordinate delivery across data science and engineering teams." ;
+    :requiredSkill :ProductDesign, :ProjectManagement, :Communication ;
+    :preferredSkill :MachineLearning, :EthicalAI ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-16"^^xsd:date ;
+    :applicationDeadline "2025-08-01"^^xsd:date ;
+    :salaryRange "Rp 18,000,000 - Rp 22,000,000" .
+
+:Job_2638 a :JobPosting ;
+    :jobTitle "People Operations Coordinator" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Coordinate onboarding, manage HR systems, and support employee engagement programs." ;
+    :requiredSkill :HumanResources, :Communication, :Teamwork ;
+    :preferredSkill :HRManagement, :CustomerSuccess ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-18"^^xsd:date ;
+    :applicationDeadline "2025-08-05"^^xsd:date ;
+    :salaryRange "Rp 10,500,000 - Rp 13,500,000" .
+
+:Job_2739 a :JobPosting ;
+    :jobTitle "Business Intelligence Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Build analytics pipelines, create reporting frameworks, and enable data-driven operational decisions." ;
+    :requiredSkill :SQL, :DataVisualization, :DataEngineering ;
+    :preferredSkill :Tableau, :PowerBI, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-20"^^xsd:date ;
+    :applicationDeadline "2025-08-08"^^xsd:date ;
+    :salaryRange "Rp 13,500,000 - Rp 17,000,000" .
+
+:Job_2840 a :JobPosting ;
+    :jobTitle "Customer Experience Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Design customer journeys, service interactions, and experience maps for end-to-end digital services." ;
+    :requiredSkill :ProductDesign, :Communication, :DesignThinking ;
+    :preferredSkill :UserResearch, :CustomerSuccess ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-22"^^xsd:date ;
+    :applicationDeadline "2025-08-10"^^xsd:date ;
+    :salaryRange "Rp 10,500,000 - Rp 13,000,000" .
+
+:Job_2941 a :JobPosting ;
+    :jobTitle "DevOps Specialist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Deploy infrastructure automation, monitor performance, and support continuous delivery practices." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-24"^^xsd:date ;
+    :applicationDeadline "2025-08-12"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 19,000,000" .
+
+:Job_3042 a :JobPosting ;
+    :jobTitle "Corporate Communications Specialist" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Develop internal and external communications, manage content channels, and support employer branding." ;
+    :requiredSkill :Communication, :StakeholderManagement, :ProjectManagement ;
+    :preferredSkill :DigitalMarketing, :CustomerSuccess ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-26"^^xsd:date ;
+    :applicationDeadline "2025-08-15"^^xsd:date ;
+    :salaryRange "Rp 12,500,000 - Rp 15,500,000" .
+
+:Job_3143 a :JobPosting ;
+    :jobTitle "Performance Marketing Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Monitor campaign ROI, optimize paid media, and provide insight reports for marketing campaigns." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-28"^^xsd:date ;
+    :applicationDeadline "2025-08-18"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 13,000,000" .
+
+:Job_3244 a :JobPosting ;
+    :jobTitle "Ethics and Governance Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Conduct policy reviews, manage compliance processes, and support ethical AI governance for data initiatives." ;
+    :requiredSkill :EthicalAI, :LegalCompliance, :Communication ;
+    :preferredSkill :ProjectManagement, :ResearchCommunication ;
+    :vacancyCount 1 ;
+    :datePosted "2025-06-30"^^xsd:date ;
+    :applicationDeadline "2025-08-20"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 17,500,000" .
+
+:Job_3345 a :JobPosting ;
+    :jobTitle "Recruitment Operations Specialist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Standardize hiring workflows, manage recruitment tools, and improve candidate experience." ;
+    :requiredSkill :Recruiting, :HumanResources, :Communication ;
+    :preferredSkill :HRManagement, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-02"^^xsd:date ;
+    :applicationDeadline "2025-08-22"^^xsd:date ;
+    :salaryRange "Rp 11,500,000 - Rp 14,500,000" .
+
+:Job_3446 a :JobPosting ;
+    :jobTitle "Market Research Analyst" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Conduct market research, evaluate competitive landscapes, and deliver data-driven recommendations." ;
+    :requiredSkill :BusinessAnalyst, :Excel, :Communication ;
+    :preferredSkill :DigitalMarketing, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-04"^^xsd:date ;
+    :applicationDeadline "2025-08-24"^^xsd:date ;
+    :salaryRange "Rp 13,500,000 - Rp 16,500,000" .
+
+:Job_3547 a :JobPosting ;
+    :jobTitle "Instructional Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Create curriculum frameworks, assess learning objectives, and develop interactive learning assets." ;
+    :requiredSkill :ProductDesign, :ResearchCommunication, :UserExperience ;
+    :preferredSkill :Communication, :ProjectManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-06"^^xsd:date ;
+    :applicationDeadline "2025-08-26"^^xsd:date ;
+    :salaryRange "Rp 10,500,000 - Rp 13,500,000" .
+
+:Job_3648 a :JobPosting ;
+    :jobTitle "Performance Enablement Specialist" ;
+    :employer :Company_FutureWorks ;
+    :jobLocation :Location_GlobalCity ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Build training programs, performance dashboards, and enablement tools for sales and client-facing teams." ;
+    :requiredSkill :Training, :Communication, :ProjectManagement ;
+    :preferredSkill :Sales, :DigitalMarketing ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-08"^^xsd:date ;
+    :applicationDeadline "2025-08-28"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 15,000,000" .
+
+:Job_3749 a :JobPosting ;
+    :jobTitle "Customer Growth Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Drive customer expansion, retention programs, and success journeys for career marketplace customers." ;
+    :requiredSkill :CustomerSuccess, :Sales, :Communication ;
+    :preferredSkill :DigitalMarketing, :ProductDesign ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-10"^^xsd:date ;
+    :applicationDeadline "2025-09-01"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 16,000,000" .
+
+:Job_3850 a :JobPosting ;
+    :jobTitle "Technical Program Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Coordinate cross-functional delivery, manage program risks, and ensure alignment for technical initiatives." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-12"^^xsd:date ;
+    :applicationDeadline "2025-09-03"^^xsd:date ;
+    :salaryRange "Rp 17,000,000 - Rp 21,000,000" .
+
+:Job_3951 a :JobPosting ;
+    :jobTitle "Senior UX Architect" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Design scalable UX systems, mentor junior designers, and lead experience frameworks for large-scale projects." ;
+    :requiredSkill :UserExperience, :DesignThinking, :Leadership ;
+    :preferredSkill :Figma, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2025-07-14"^^xsd:date ;
+    :applicationDeadline "2025-09-05"^^xsd:date ;
+    :salaryRange "Rp 16,000,000 - Rp 19,500,000" .
+
+:Job_6000 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6001 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6002 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6003 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6004 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6005 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6006 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6007 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6008 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6009 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6010 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6011 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6012 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6013 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6014 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6015 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6016 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6017 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6018 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6019 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-01-05"^^xsd:date ;
+    :applicationDeadline "2026-02-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6020 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6021 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6022 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6023 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6024 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6025 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6026 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6027 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6028 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6029 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6030 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6031 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6032 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6033 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6034 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6035 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6036 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6037 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6038 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6039 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-02-05"^^xsd:date ;
+    :applicationDeadline "2026-03-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6040 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6041 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6042 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6043 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6044 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6045 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6046 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6047 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6048 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6049 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6050 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6051 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6052 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6053 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6054 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6055 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6056 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6057 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6058 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6059 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-03-05"^^xsd:date ;
+    :applicationDeadline "2026-04-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6060 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6061 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6062 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6063 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6064 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6065 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6066 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6067 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6068 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6069 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6070 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6071 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6072 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6073 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6074 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6075 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6076 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6077 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6078 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6079 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-04-05"^^xsd:date ;
+    :applicationDeadline "2026-05-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6080 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6081 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6082 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6083 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6084 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6085 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6086 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6087 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6088 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6089 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6090 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6091 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6092 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6093 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6094 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6095 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6096 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6097 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6098 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6099 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-05-05"^^xsd:date ;
+    :applicationDeadline "2026-06-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6100 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6101 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6102 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6103 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6104 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6105 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6106 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6107 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6108 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6109 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6110 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6111 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6112 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6113 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6114 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6115 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6116 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6117 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6118 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6119 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-06-05"^^xsd:date ;
+    :applicationDeadline "2026-07-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6120 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6121 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6122 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6123 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6124 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6125 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6126 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6127 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6128 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6129 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6130 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6131 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6132 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6133 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6134 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6135 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6136 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6137 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6138 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6139 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_EcoInsight ;
+    :jobLocation :Location_Surabaya ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-07-05"^^xsd:date ;
+    :applicationDeadline "2026-08-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6140 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6141 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6142 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6143 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6144 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6145 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6146 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6147 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6148 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6149 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6150 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6151 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6152 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6153 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6154 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6155 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6156 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6157 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6158 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6159 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_DesignHive ;
+    :jobLocation :Location_Bandung ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-08-05"^^xsd:date ;
+    :applicationDeadline "2026-09-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6160 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6161 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6162 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6163 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6164 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6165 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6166 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6167 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6168 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6169 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6170 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6171 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6172 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6173 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6174 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6175 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6176 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6177 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6178 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6179 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_SkylineTech ;
+    :jobLocation :Location_Jakarta ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-09-05"^^xsd:date ;
+    :applicationDeadline "2026-10-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6180 a :JobPosting ;
+    :jobTitle "Data Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis data operasional, membuat laporan, dan memberi insight untuk keputusan tim." ;
+    :requiredSkill :Python, :SQL, :Excel, :DataVisualization ;
+    :preferredSkill :Communication, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6181 a :JobPosting ;
+    :jobTitle "Data Scientist" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengembangkan model prediktif dan insight untuk mendukung keputusan bisnis." ;
+    :requiredSkill :Python, :MachineLearning, :DataVisualization ;
+    :preferredSkill :SQL, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 20,000,000" .
+
+:Job_6182 a :JobPosting ;
+    :jobTitle "Data Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun pipeline data dan menjaga kualitas data lintas sistem." ;
+    :requiredSkill :DataEngineering, :Python, :SQL ;
+    :preferredSkill :CloudArchitecture, :DevOps ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6183 a :JobPosting ;
+    :jobTitle "BI Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun dashboard dan metrik bisnis untuk monitoring performa." ;
+    :requiredSkill :SQL, :DataVisualization, :Tableau ;
+    :preferredSkill :PowerBI, :Excel ;
+    :vacancyCount 2 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6184 a :JobPosting ;
+    :jobTitle "Product Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menganalisis perilaku pengguna dan KPI produk untuk rekomendasi prioritas." ;
+    :requiredSkill :SQL, :DataVisualization, :Communication ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6185 a :JobPosting ;
+    :jobTitle "Marketing Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menganalisis performa kampanye dan optimasi funnel marketing." ;
+    :requiredSkill :DigitalMarketing, :DataVisualization, :Excel ;
+    :preferredSkill :SQL, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 9,000,000 - Rp 13,000,000" .
+
+:Job_6186 a :JobPosting ;
+    :jobTitle "Finance Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menyusun model finansial dan analisis kinerja bisnis." ;
+    :requiredSkill :Excel, :FinancialModeling, :Communication ;
+    :preferredSkill :BusinessAnalysis, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 16,000,000" .
+
+:Job_6187 a :JobPosting ;
+    :jobTitle "Operations Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau proses operasional dan menyusun rekomendasi efisiensi." ;
+    :requiredSkill :Excel, :ProblemSolving, :Communication ;
+    :preferredSkill :ProjectManagement, :DataVisualization ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6188 a :JobPosting ;
+    :jobTitle "Business Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Menggali kebutuhan bisnis, menyusun requirement, dan mendukung eksekusi proyek." ;
+    :requiredSkill :BusinessAnalysis, :Communication, :ProjectManagement ;
+    :preferredSkill :Excel, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6189 a :JobPosting ;
+    :jobTitle "UX Researcher" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Melakukan riset pengguna, wawancara, dan uji kegunaan produk." ;
+    :requiredSkill :UserResearch, :DesignThinking, :Communication ;
+    :preferredSkill :Figma, :Teamwork ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6190 a :JobPosting ;
+    :jobTitle "UI/UX Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Mendesain antarmuka dan prototipe untuk meningkatkan pengalaman pengguna." ;
+    :requiredSkill :Figma, :Wireframing, :UserResearch ;
+    :preferredSkill :ProductDesign, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6191 a :JobPosting ;
+    :jobTitle "Product Designer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Contract" ;
+    :jobDescription "Menyusun sistem desain dan solusi visual untuk kebutuhan produk." ;
+    :requiredSkill :ProductDesign, :Figma, :UserExperience ;
+    :preferredSkill :DesignThinking, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 16,000,000" .
+
+:Job_6192 a :JobPosting ;
+    :jobTitle "Frontend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Membangun antarmuka web yang responsif dan performant." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React ;
+    :preferredSkill :Figma, :Testing ;
+    :vacancyCount 2 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 11,000,000 - Rp 15,000,000" .
+
+:Job_6193 a :JobPosting ;
+    :jobTitle "Backend Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Membangun API dan layanan backend yang stabil dan terukur." ;
+    :requiredSkill :NodeJS, :SQLServer, :ProblemSolving ;
+    :preferredSkill :DevOps, :CloudArchitecture ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 12,000,000 - Rp 17,000,000" .
+
+:Job_6194 a :JobPosting ;
+    :jobTitle "Full Stack Developer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Remote" ;
+    :jobDescription "Mengembangkan fitur end-to-end dari frontend hingga backend." ;
+    :requiredSkill :HTML, :CSS, :JavaScript, :React, :NodeJS ;
+    :preferredSkill :SQL, :ProblemSolving ;
+    :vacancyCount 2 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 13,000,000 - Rp 18,000,000" .
+
+:Job_6195 a :JobPosting ;
+    :jobTitle "QA Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Merancang test plan, otomatisasi pengujian, dan menjaga kualitas rilis." ;
+    :requiredSkill :Testing, :ProblemSolving, :Teamwork ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 10,000,000 - Rp 14,000,000" .
+
+:Job_6196 a :JobPosting ;
+    :jobTitle "DevOps Engineer" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola CI/CD, observability, dan keandalan infrastruktur." ;
+    :requiredSkill :DevOps, :CloudArchitecture, :Testing ;
+    :preferredSkill :NodeJS, :ProblemSolving ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6197 a :JobPosting ;
+    :jobTitle "Security Analyst" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Memantau keamanan sistem, melakukan analisis risiko, dan mitigasi insiden." ;
+    :requiredSkill :Security, :ProblemSolving, :CloudArchitecture ;
+    :preferredSkill :DevOps, :Communication ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+:Job_6198 a :JobPosting ;
+    :jobTitle "Product Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola roadmap produk, sinkronisasi stakeholder, dan prioritas fitur." ;
+    :requiredSkill :ProjectManagement, :Communication, :ProductDesign ;
+    :preferredSkill :StakeholderManagement, :Leadership ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 15,000,000 - Rp 20,000,000" .
+
+:Job_6199 a :JobPosting ;
+    :jobTitle "Project Manager" ;
+    :employer :Company_CareerLaunch ;
+    :jobLocation :Location_Bali ;
+    :employmentType "Full-Time" ;
+    :jobDescription "Mengelola timeline proyek, koordinasi tim, dan pelaporan status." ;
+    :requiredSkill :ProjectManagement, :Communication, :Teamwork ;
+    :preferredSkill :Leadership, :StakeholderManagement ;
+    :vacancyCount 1 ;
+    :datePosted "2026-10-05"^^xsd:date ;
+    :applicationDeadline "2026-11-15"^^xsd:date ;
+    :salaryRange "Rp 14,000,000 - Rp 19,000,000" .
+
+# Applicants
+:Applicant_Alya a :Applicant ;
+    :applicantName "Alya Wibowo" ;
+    :email "alya.wibowo@example.com" ;
+    :phone "+62-812-3456-7890" ;
+    :currentLocation :Location_Jakarta ;
+    :hasSkill :Python, :SQL, :Excel, :DataVisualization, :Communication ;
+    :hasResume :Resume_Alya ;
+    :appliedFor :Job_1234, :Job_5678 .
+
+:Applicant_Bayu a :Applicant ;
+    :applicantName "Bayu Santoso" ;
+    :email "bayu.santoso@example.com" ;
+    :phone "+62-813-4567-8901" ;
+    :currentLocation :Location_Bandung ;
+    :hasSkill :Figma, :UserResearch, :Wireframing, :Teamwork, :Communication ;
+    :hasResume :Resume_Bayu ;
+    :appliedFor :Job_2345 .
+
+:Applicant_Citra a :Applicant ;
+    :applicantName "Citra Permata" ;
+    :email "citra.permata@example.com" ;
+    :phone "+62-811-5678-9012" ;
+    :currentLocation :Location_Bali ;
+    :hasSkill :HTML, :CSS, :JavaScript, :React, :NodeJS, :ProblemSolving ;
+    :hasResume :Resume_Citra ;
+    :appliedFor :Job_3456 .
+
+:Applicant_Dimas a :Applicant ;
+    :applicantName "Dimas Nugroho" ;
+    :email "dimas.nugroho@example.com" ;
+    :phone "+62-818-6789-0123" ;
+    :currentLocation :Location_Surabaya ;
+    :hasSkill :Excel, :SQL, :Communication, :ProjectManagement ;
+    :hasResume :Resume_Dimas ;
+    :appliedFor :Job_5678, :Job_4567 .
+
+:Applicant_Eka a :Applicant ;
+    :applicantName "Eka Permana" ;
+    :email "eka.permana@example.com" ;
+    :phone "+62-811-7890-1234" ;
+    :currentLocation :Location_Jakarta ;
+    :hasSkill :LegalCompliance, :DataEngineering, :EthicalAI ;
+    :hasResume :Resume_Eka ;
+    :appliedFor :Job_4052, :Job_4456 .
+
+:Applicant_Farhan a :Applicant ;
+    :applicantName "Farhan Wijaya" ;
+    :email "farhan.wijaya@example.com" ;
+    :phone "+62-812-8901-2345" ;
+    :currentLocation :Location_Bali ;
+    :hasSkill :Training, :Leadership, :PerformanceManagement ;
+    :hasResume :Resume_Farhan ;
+    :appliedFor :Job_4153, :Job_4355 .
+
+:Applicant_Gita a :Applicant ;
+    :applicantName "Gita Larasati" ;
+    :email "gita.larasati@example.com" ;
+    :phone "+62-813-9012-3456" ;
+    :currentLocation :Location_Bandung ;
+    :hasSkill :ProductDesign, :UserExperience, :Accessibility ;
+    :hasResume :Resume_Gita ;
+    :appliedFor :Job_4254, :Job_4557 .
+
+:Applicant_Hana a :Applicant ;
+    :applicantName "Hana Pratama" ;
+    :email "hana.pratama@example.com" ;
+    :phone "+62-814-0123-4567" ;
+    :currentLocation :Location_Jakarta ;
+    :hasSkill :CloudArchitecture, :DevOps, :DataOps ;
+    :hasResume :Resume_Hana ;
+    :appliedFor :Job_4658, :Job_4961 .
+
+:Applicant_Irwan a :Applicant ;
+    :applicantName "Irwan Hari" ;
+    :email "irwan.hari@example.com" ;
+    :phone "+62-815-1234-5678" ;
+    :currentLocation :Location_GlobalCity ;
+    :hasSkill :EmployerBranding, :Communication, :DigitalMarketing ;
+    :hasResume :Resume_Irwan ;
+    :appliedFor :Job_4759, :Job_3143 .
+
+:Applicant_Jessica a :Applicant ;
+    :applicantName "Jessica Anindya" ;
+    :email "jessica.anindya@example.com" ;
+    :phone "+62-816-2345-6789" ;
+    :currentLocation :Location_Bali ;
+    :hasSkill :CustomerSuccess, :Sales, :Communication ;
+    :hasResume :Resume_Jessica ;
+    :appliedFor :Job_9012, :Job_3739 .
+
+:Applicant_Kiro a :Applicant ;
+    :applicantName "Kiro Setiawan" ;
+    :email "kiro.setiawan@example.com" ;
+    :phone "+62-817-3456-7890" ;
+    :currentLocation :Location_Surabaya ;
+    :hasSkill :SQL, :DataVisualization, :DataEngineering ;
+    :hasResume :Resume_Kiro ;
+    :appliedFor :Job_4456, :Job_1628 .
+
+:Applicant_Laila a :Applicant ;
+    :applicantName "Laila Prameswari" ;
+    :email "laila.prameswari@example.com" ;
+    :phone "+62-818-4567-8901" ;
+    :currentLocation :Location_Bandung ;
+    :hasSkill :DigitalMarketing, :DataVisualization, :PerformanceManagement ;
+    :hasResume :Resume_Laila ;
+    :appliedFor :Job_4860, :Job_3143 .
+
+# Resumes
+:Resume_Alya a :Resume ;
+    :resumeTitle "Alya Wibowo - Data Analyst Resume" ;
+    :summary "Emerging data analyst with experience in business reporting and visualization." ;
+    :education :Education_Alya ;
+    :experience :Experience_Alya1, :Experience_Alya2 .
+
+:Resume_Bayu a :Resume ;
+    :resumeTitle "Bayu Santoso - UI/UX Designer Resume" ;
+    :summary "Creative UI/UX designer focused on customer-centered digital products." ;
+    :education :Education_Bayu ;
+    :experience :Experience_Bayu1, :Experience_Bayu2 .
+
+:Resume_Citra a :Resume ;
+    :resumeTitle "Citra Permata - Full Stack Developer Resume" ;
+    :summary "Full stack developer with frontend and backend experience in web platforms." ;
+    :education :Education_Citra ;
+    :experience :Experience_Citra1, :Experience_Citra2 .
+
+:Resume_Dimas a :Resume ;
+    :resumeTitle "Dimas Nugroho - Business Analyst Resume" ;
+    :summary "Business analyst with stakeholder collaboration and process optimization experience." ;
+    :education :Education_Dimas ;
+    :experience :Experience_Dimas1, :Experience_Dimas2 .
+
+:Resume_Eka a :Resume ;
+    :resumeTitle "Eka Permana - Data Compliance Specialist Resume" ;
+    :summary "Compliance-focused data professional with experience in privacy, governance, and analytics controls." ;
+    :education :Education_Eka ;
+    :experience :Experience_Eka1, :Experience_Eka2 .
+
+:Resume_Farhan a :Resume ;
+    :resumeTitle "Farhan Wijaya - Talent Development Resume" ;
+    :summary "Talent development lead with experience in training design, leadership programs, and performance measurement." ;
+    :education :Education_Farhan ;
+    :experience :Experience_Farhan1, :Experience_Farhan2 .
+
+:Resume_Gita a :Resume ;
+    :resumeTitle "Gita Larasati - Content Experience Resume" ;
+    :summary "Content experience manager skilled in accessible design, experience mapping, and product storytelling." ;
+    :education :Education_Gita ;
+    :experience :Experience_Gita1, :Experience_Gita2 .
+
+:Resume_Hana a :Resume ;
+    :resumeTitle "Hana Pratama - Cloud Infrastructure Resume" ;
+    :summary "Cloud engineer with experience in automation, infrastructure architecture, and DevOps practices." ;
+    :education :Education_Hana ;
+    :experience :Experience_Hana1, :Experience_Hana2 .
+
+:Resume_Irwan a :Resume ;
+    :resumeTitle "Irwan Hari - Employer Branding Resume" ;
+    :summary "Employer branding specialist with strong communication, marketing, and candidate engagement experience." ;
+    :education :Education_Irwan ;
+    :experience :Experience_Irwan1, :Experience_Irwan2 .
+
+:Resume_Jessica a :Resume ;
+    :resumeTitle "Jessica Anindya - Customer Success Resume" ;
+    :summary "Customer success manager focused on onboarding, retention, and customer growth programs." ;
+    :education :Education_Jessica ;
+    :experience :Experience_Jessica1, :Experience_Jessica2 .
+
+:Resume_Kiro a :Resume ;
+    :resumeTitle "Kiro Setiawan - Business Intelligence Resume" ;
+    :summary "BI engineer skilled in analytics pipelines, dashboard automation, and data reporting." ;
+    :education :Education_Kiro ;
+    :experience :Experience_Kiro1, :Experience_Kiro2 .
+
+:Resume_Laila a :Resume ;
+    :resumeTitle "Laila Prameswari - Performance Marketing Resume" ;
+    :summary "Performance marketing analyst with campaign optimization and measurement expertise." ;
+    :education :Education_Laila ;
+    :experience :Experience_Laila1, :Experience_Laila2 .
+
+# Education
+:Education_Alya a :Education ;
+    :schoolName "Universitas Indonesia" ;
+    :degree "B.Sc. in Statistics" ;
+    :fieldOfStudy "Statistics and Data Science" ;
+    :graduationYear "2023" .
+
+:Education_Bayu a :Education ;
+    :schoolName "Institut Teknologi Bandung" ;
+    :degree "B.Des. in Visual Communication" ;
+    :fieldOfStudy "Digital Product Design" ;
+    :graduationYear "2022" .
+
+:Education_Citra a :Education ;
+    :schoolName "Universitas Gadjah Mada" ;
+    :degree "B.Sc. in Informatics" ;
+    :fieldOfStudy "Computer Science" ;
+    :graduationYear "2022" .
+
+:Education_Dimas a :Education ;
+    :schoolName "Universitas Airlangga" ;
+    :degree "BBA in Management" ;
+    :fieldOfStudy "Business Management" ;
+    :graduationYear "2023" .
+
+:Education_Eka a :Education ;
+    :schoolName "Universitas Indonesia" ;
+    :degree "B.Sc. in Information Systems" ;
+    :fieldOfStudy "Information Systems and Governance" ;
+    :graduationYear "2022" .
+
+:Education_Farhan a :Education ;
+    :schoolName "Institut Teknologi Bandung" ;
+    :degree "B.Sc. in Psychology" ;
+    :fieldOfStudy "Organizational Psychology" ;
+    :graduationYear "2021" .
+
+:Education_Gita a :Education ;
+    :schoolName "Universitas Padjadjaran" ;
+    :degree "B.Des. in Multimedia Design" ;
+    :fieldOfStudy "Visual Communication Design" ;
+    :graduationYear "2021" .
+
+:Education_Hana a :Education ;
+    :schoolName "Institut Teknologi Sepuluh Nopember" ;
+    :degree "B.Sc. in Information Technology" ;
+    :fieldOfStudy "Cloud Computing" ;
+    :graduationYear "2020" .
+
+:Education_Irwan a :Education ;
+    :schoolName "Universitas Trisakti" ;
+    :degree "B.A. in Communication Studies" ;
+    :fieldOfStudy "Corporate Communication" ;
+    :graduationYear "2020" .
+
+:Education_Jessica a :Education ;
+    :schoolName "Universitas Kristen Petra" ;
+    :degree "B.Sc. in Management" ;
+    :fieldOfStudy "Service Management" ;
+    :graduationYear "2022" .
+
+:Education_Kiro a :Education ;
+    :schoolName "Universitas Airlangga" ;
+    :degree "B.Sc. in Statistics" ;
+    :fieldOfStudy "Data Analytics" ;
+    :graduationYear "2021" .
+
+:Education_Laila a :Education ;
+    :schoolName "Universitas Brawijaya" ;
+    :degree "B.Sc. in Marketing" ;
+    :fieldOfStudy "Digital Marketing" ;
+    :graduationYear "2022" .
+
+# Experience
+:Experience_Alya1 a :Experience ;
+    :jobTitle "Data Intern" ;
+    :employer "PT Analitik" ;
+    :duration "6 months" ;
+    :description "Created dashboards and reports for marketing campaigns." .
+
+:Experience_Alya2 a :Experience ;
+    :jobTitle "Research Assistant" ;
+    :employer "UI Data Lab" ;
+    :duration "8 months" ;
+    :description "Performed data cleaning and exploratory analysis for client projects." .
+
+:Experience_Bayu1 a :Experience ;
+    :jobTitle "UX Designer Intern" ;
+    :employer "Studio Kreatif" ;
+    :duration "5 months" ;
+    :description "Designed user flows and wireframes for ecommerce apps." .
+
+:Experience_Bayu2 a :Experience ;
+    :jobTitle "Visual Designer" ;
+    :employer "Agensi Digital" ;
+    :duration "7 months" ;
+    :description "Delivered UI prototypes and design systems for mobile interfaces." .
+
+:Experience_Citra1 a :Experience ;
+    :jobTitle "Frontend Developer" ;
+    :employer "Startup Tech" ;
+    :duration "10 months" ;
+    :description "Built responsive pages with React and collaborated with backend teams." .
+
+:Experience_Citra2 a :Experience ;
+    :jobTitle "Backend Developer" ;
+    :employer "Digital Solutions" ;
+    :duration "9 months" ;
+    :description "Developed API endpoints and managed database integration using Node.js." .
+
+:Experience_Dimas1 a :Experience ;
+    :jobTitle "Business Intern" ;
+    :employer "Konsultan Bisnis" ;
+    :duration "6 months" ;
+    :description "Supported process mapping and stakeholder interviews for client projects." .
+
+:Experience_Dimas2 a :Experience ;
+    :jobTitle "Junior Analyst" ;
+    :employer "PT Solusi" ;
+    :duration "8 months" ;
+    :description "Analyzed operational KPIs and produced monthly performance summaries." .
+
+:Experience_Eka1 a :Experience ;
+    :jobTitle "Compliance Analyst" ;
+    :employer "PT DataGuard" ;
+    :duration "10 months" ;
+    :description "Maintained privacy controls and supported GDPR-like audits for analytics data." .
+
+:Experience_Eka2 a :Experience ;
+    :jobTitle "Data Governance Intern" ;
+    :employer "PT Analitika" ;
+    :duration "8 months" ;
+    :description "Documented data policies and helped implement governance workflows for marketing datasets." .
+
+:Experience_Farhan1 a :Experience ;
+    :jobTitle "Learning Coordinator" ;
+    :employer "PT Talenta" ;
+    :duration "9 months" ;
+    :description "Designed internal training sessions and tracked learning outcomes for teams." .
+
+:Experience_Farhan2 a :Experience ;
+    :jobTitle "Talent Programs Specialist" ;
+    :employer "PT Karir" ;
+    :duration "7 months" ;
+    :description "Managed leadership development workshops and measured employee engagement." .
+
+:Experience_Gita1 a :Experience ;
+    :jobTitle "UX Content Designer" ;
+    :employer "Agensi Kreatif" ;
+    :duration "10 months" ;
+    :description "Created accessible content systems and experience flows for mobile applications." .
+
+:Experience_Gita2 a :Experience ;
+    :jobTitle "Experience Design Consultant" ;
+    :employer "PT Kreasi Digital" ;
+    :duration "8 months" ;
+    :description "Delivered customer journey maps and accessibility improvements for web products." .
+
+:Experience_Hana1 a :Experience ;
+    :jobTitle "Cloud Engineer" ;
+    :employer "PT CloudOps" ;
+    :duration "11 months" ;
+    :description "Built infrastructure automation for cloud-native applications using IaC." .
+
+:Experience_Hana2 a :Experience ;
+    :jobTitle "DevOps Analyst" ;
+    :employer "PT TechScale" ;
+    :duration "9 months" ;
+    :description "Implemented CI/CD pipelines and supported container deployments." .
+
+:Experience_Irwan1 a :Experience ;
+    :jobTitle "Employer Brand Associate" ;
+    :employer "PT TalentaPlus" ;
+    :duration "8 months" ;
+    :description "Produced recruitment campaigns and managed candidate-facing communications." .
+
+:Experience_Irwan2 a :Experience ;
+    :jobTitle "Communications Specialist" ;
+    :employer "PT MediaHub" ;
+    :duration "10 months" ;
+    :description "Created brand narratives and supported internal communications programs." .
+
+:Experience_Jessica1 a :Experience ;
+    :jobTitle "Customer Success Specialist" ;
+    :employer "PT SupportOne" ;
+    :duration "9 months" ;
+    :description "Onboarded clients and improved retention through proactive account management." .
+
+:Experience_Jessica2 a :Experience ;
+    :jobTitle "Retention Analyst" ;
+    :employer "PT Layanan" ;
+    :duration "7 months" ;
+    :description "Tracked customer satisfaction metrics and optimized success workflows." .
+
+:Experience_Kiro1 a :Experience ;
+    :jobTitle "BI Analyst" ;
+    :employer "PT Insight" ;
+    :duration "10 months" ;
+    :description "Developed reporting dashboards and automated analytics delivery." .
+
+:Experience_Kiro2 a :Experience ;
+    :jobTitle "Analytics Engineer" ;
+    :employer "PT DataWorks" ;
+    :duration "8 months" ;
+    :description "Built ETL routines and data models for business intelligence teams." .
+
+:Experience_Laila1 a :Experience ;
+    :jobTitle "Digital Campaign Analyst" ;
+    :employer "PT Pemasaran" ;
+    :duration "9 months" ;
+    :description "Optimized paid media campaigns and reported on acquisition performance." .
+
+:Experience_Laila2 a :Experience ;
+    :jobTitle "Marketing Operations Coordinator" ;
+    :employer "PT Growth" ;
+    :duration "8 months" ;
+    :description "Managed marketing workflows, reporting dashboards, and campaign ops." .
+
+# Applications
+:Application_Alya1234 a :Application ;
+    :applicationFor :Job_1234 ;
+    :applicant :Applicant_Alya ;
+    :applicationStatus "Under Review" ;
+    :submittedOn "2025-05-08"^^xsd:date .
+
+:Application_Bayu2345 a :Application ;
+    :applicationFor :Job_2345 ;
+    :applicant :Applicant_Bayu ;
+    :applicationStatus "Interview Scheduled" ;
+    :submittedOn "2025-05-10"^^xsd:date .
+
+:Application_Citra3456 a :Application ;
+    :applicationFor :Job_3456 ;
+    :applicant :Applicant_Citra ;
+    :applicationStatus "Offer Extended" ;
+    :submittedOn "2025-05-12"^^xsd:date .
+
+:Application_Dimas5678 a :Application ;
+    :applicationFor :Job_5678 ;
+    :applicant :Applicant_Dimas ;
+    :applicationStatus "Rejected" ;
+    :submittedOn "2025-05-11"^^xsd:date .
+
+:Application_Dimas4567 a :Application ;
+    :applicationFor :Job_4567 ;
+    :applicant :Applicant_Dimas ;
+    :applicationStatus "Pending" ;
+    :submittedOn "2025-05-12"^^xsd:date .
+
+:Application_Eka4052 a :Application ;
+    :applicationFor :Job_4052 ;
+    :applicant :Applicant_Eka ;
+    :applicationStatus "Under Review" ;
+    :submittedOn "2025-07-18"^^xsd:date .
+
+:Application_Farhan4153 a :Application ;
+    :applicationFor :Job_4153 ;
+    :applicant :Applicant_Farhan ;
+    :applicationStatus "Interview Scheduled" ;
+    :submittedOn "2025-07-19"^^xsd:date .
+
+:Application_Gita4254 a :Application ;
+    :applicationFor :Job_4254 ;
+    :applicant :Applicant_Gita ;
+    :applicationStatus "Offer Extended" ;
+    :submittedOn "2025-07-20"^^xsd:date .
+
+:Application_Hana4658 a :Application ;
+    :applicationFor :Job_4658 ;
+    :applicant :Applicant_Hana ;
+    :applicationStatus "Pending" ;
+    :submittedOn "2025-07-21"^^xsd:date .
+
+:Application_Irwan4759 a :Application ;
+    :applicationFor :Job_4759 ;
+    :applicant :Applicant_Irwan ;
+    :applicationStatus "Under Review" ;
+    :submittedOn "2025-07-22"^^xsd:date .
+
+:Application_Jessica9012 a :Application ;
+    :applicationFor :Job_9012 ;
+    :applicant :Applicant_Jessica ;
+    :applicationStatus "Hired" ;
+    :submittedOn "2025-07-23"^^xsd:date .
+
+:Application_Kiro4456 a :Application ;
+    :applicationFor :Job_4456 ;
+    :applicant :Applicant_Kiro ;
+    :applicationStatus "Rejected" ;
+    :submittedOn "2025-07-24"^^xsd:date .
+
+:Application_Laila4860 a :Application ;
+    :applicationFor :Job_4860 ;
+    :applicant :Applicant_Laila ;
+    :applicationStatus "Pending" ;
+    :submittedOn "2025-07-25"^^xsd:date .
+
+# Suggested Career Paths
+:CareerPath_DataAnalyst a :CareerRole ;
+    :roleName "Senior Data Analyst" ;
+    :requiresSkill :Python, :SQL, :Excel, :DataVisualization, :Tableau ;
+    :recommendedExperience "3+ years of data analysis, reporting, or analytics consulting." .
+
+:CareerPath_FullStackDeveloper a :CareerRole ;
+    :roleName "Lead Full Stack Developer" ;
+    :requiresSkill :HTML, :CSS, :JavaScript, :React, :NodeJS, :SQLServer ;
+    :recommendedExperience "5+ years developing enterprise web applications." .
+
+:CareerPath_ProductManager a :CareerRole ;
+    :roleName "Senior Product Manager" ;
+    :requiresSkill :ProjectManagement, :ProductDesign, :Communication, :Teamwork ;
+    :recommendedExperience "5+ years in product leadership with cross-functional teams." .
+
+# Dataset Metadata
+:Dataset_CareerSite rdf:type schema:Dataset ;
+    schema:name "Career Application Website Dummy Dataset" ;
+    schema:description "Dummy data for a career/job applying platform including job postings, employers, applicants, resumes, resumes, applications, and skills." ;
+    schema:datePublished "2025-05-14"^^xsd:date ;
+    schema:keywords "career, jobs, applicants, resumes, job postings, recruiting" .

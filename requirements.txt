@@ -1,0 +1,5 @@
+streamlit
+SPARQLWrapper
+google-generativeai
+rdflib
+Pillow
