@@ -55,6 +55,13 @@ def render_user_view(theme, skill_keyword_map, skill_options):
                 placeholder="Contoh: Aku mahir Python, suka membuat dashboard, dan tertarik ke product management.",
                 height=150,
             )
+            # Add toggle for OR/AND logic
+            search_mode = st.radio(
+                "Mode pencarian:",
+                options=["Toleran", "Ketat"],
+                index=1,  # Default to Ketat (AND)
+                help="Toleran: Job hanya perlu memiliki salah satu skill. Ketat: Job harus memiliki semua skill yang dipilih.",
+            )
             submit_button = st.form_submit_button("Cari Jobs")
 
     with right:
@@ -69,13 +76,6 @@ def render_user_view(theme, skill_keyword_map, skill_options):
                 </ul>
             </div>
             """,
-            unsafe_allow_html=True,
-        )
-        st.markdown("### Tips cepat")
-        st.markdown(
-            f"<div style='padding: 16px; border-radius: 18px; background: {theme['accent_soft']}; color: {theme['text']}; border: 1px solid {theme['border']}'>"
-            + "Aku paling sering dapat hasil bagus kalau kamu tulis 2-3 skill teknis dan 1 soft skill."
-            + "</div>",
             unsafe_allow_html=True,
         )
 
@@ -113,7 +113,9 @@ def render_user_view(theme, skill_keyword_map, skill_options):
         try:
             matched_jobs = []
             if extracted_skills:
-                matched_jobs = sparql_client.get_jobs_by_skills(extracted_skills)
+                # Determine if we should use AND (Ketat) or OR (Toleran) logic
+                use_and = "Ketat" in search_mode
+                matched_jobs = sparql_client.get_jobs_by_skills(extracted_skills, use_and=use_and)
 
             if not matched_jobs:
                 st.warning(
@@ -210,6 +212,16 @@ def render_jobs_view(theme, skill_options):
     with filter_left:
         search_text = st.text_input("Cari role", placeholder="Contoh: Data Engineer")
         skill_filter = st.multiselect("Filter berdasarkan skill", skill_options)
+        # Add toggle for OR/AND logic
+        filter_mode = "Ketat"  # Default to AND (Ketat)
+        if skill_filter:  # Only show toggle if skills are selected
+            filter_mode = st.radio(
+                "Mode filter skill:",
+                options=["Toleran", "Ketat"],
+                index=1,  # Default to Ketat (AND)
+                key="jobs_filter_mode",  # Unique key to avoid conflicts
+                help="Toleran: Role memiliki salah satu skill. Ketat: Role memiliki semua skill yang dipilih.",
+            )
     with filter_right:
         st.markdown(
             f"<div style='padding:16px; border-radius:18px; background:{theme['panel']}; border:1px solid {theme['border']};'>"
@@ -233,10 +245,23 @@ def render_jobs_view(theme, skill_options):
 
     if skill_filter:
         selected = {skill.lower() for skill in skill_filter}
-        roles = [
-            role for role in roles
-            if selected.issubset({skill.lower() for skill in role["skills"]})
-        ]
+        
+        # Check if Ketat (AND) mode is selected
+        # filter_mode is defined in the radio button above
+        use_and = "Ketat" in filter_mode if 'filter_mode' in dir() else True
+        
+        if use_and:
+            # AND logic: role must have ALL selected skills
+            roles = [
+                role for role in roles
+                if selected.issubset({skill.lower() for skill in role["skills"]})
+            ]
+        else:
+            # OR logic: role can have ANY of the selected skills
+            roles = [
+                role for role in roles
+                if any(skill.lower() in {s.lower() for s in role["skills"]} for skill in selected)
+            ]
 
     if not roles:
         st.warning("Belum ada role yang cocok dengan filtermu atau database masih kosong.")

@@ -46,36 +46,69 @@ def get_roles_by_skills(skills):
     return results
 
 
-def get_jobs_by_skills(skills):
-    """Search job postings that require one or more of the given skills."""
+def get_jobs_by_skills(skills, use_and=False):
+    """
+    Search job postings by skills.
+    If use_and=True: job must have ALL skills (AND logic)
+    If use_and=False: job can have ANY skill (OR logic)
+    """
     if not skills:
         return []
 
-    filters = " || ".join(
-        f'CONTAINS(LCASE(?skillName), LCASE("{skill}"))'
-        for skill in skills
-    )
-
     sparql = SPARQLWrapper(FUSEKI_ENDPOINT)
-    query = f"""
-    PREFIX : <http://example.org/skillmap#>
-    SELECT DISTINCT ?jobTitle ?companyName ?jobDescription ?vacancyCount (GROUP_CONCAT(DISTINCT ?skillName; separator="|") AS ?skills)
-    WHERE {{
-      ?job a :JobPosting ;
-           :jobTitle ?jobTitle ;
-           :requiredSkill ?skillURI ;
-           :jobDescription ?jobDescription ;
-           :vacancyCount ?vacancyCount .
-      OPTIONAL {{
-        ?job :employer ?employer .
-        ?employer :companyName ?companyName .
-      }}
-      ?skillURI :skillName ?skillName .
-      FILTER({filters})
-    }}
-    GROUP BY ?jobTitle ?companyName ?jobDescription ?vacancyCount
-    ORDER BY LCASE(?jobTitle)
-    """
+    
+    if use_and and len(skills) > 1:
+        # AND logic: fetch all jobs with any of the skills, then filter in Python
+        filters = " || ".join(
+            f'CONTAINS(LCASE(?skillName), LCASE("{skill}"))'
+            for skill in skills
+        )
+        
+        query = f"""
+        PREFIX : <http://example.org/skillmap#>
+        SELECT DISTINCT ?jobTitle ?companyName ?jobDescription ?vacancyCount (GROUP_CONCAT(DISTINCT ?skillName; separator="|") AS ?skills)
+        WHERE {{
+          ?job a :JobPosting ;
+               :jobTitle ?jobTitle ;
+               :requiredSkill ?skillURI ;
+               :jobDescription ?jobDescription ;
+               :vacancyCount ?vacancyCount .
+          OPTIONAL {{
+            ?job :employer ?employer .
+            ?employer :companyName ?companyName .
+          }}
+          ?skillURI :skillName ?skillName .
+          FILTER({filters})
+        }}
+        GROUP BY ?jobTitle ?companyName ?jobDescription ?vacancyCount
+        ORDER BY LCASE(?jobTitle)
+        """
+    else:
+        # OR logic: job can have any of the skills
+        filters = " || ".join(
+            f'CONTAINS(LCASE(?skillName), LCASE("{skill}"))'
+            for skill in skills
+        )
+        
+        query = f"""
+        PREFIX : <http://example.org/skillmap#>
+        SELECT DISTINCT ?jobTitle ?companyName ?jobDescription ?vacancyCount (GROUP_CONCAT(DISTINCT ?skillName; separator="|") AS ?skills)
+        WHERE {{
+          ?job a :JobPosting ;
+               :jobTitle ?jobTitle ;
+               :requiredSkill ?skillURI ;
+               :jobDescription ?jobDescription ;
+               :vacancyCount ?vacancyCount .
+          OPTIONAL {{
+            ?job :employer ?employer .
+            ?employer :companyName ?companyName .
+          }}
+          ?skillURI :skillName ?skillName .
+          FILTER({filters})
+        }}
+        GROUP BY ?jobTitle ?companyName ?jobDescription ?vacancyCount
+        ORDER BY LCASE(?jobTitle)
+        """
 
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
@@ -85,17 +118,34 @@ def get_jobs_by_skills(skills):
         jobs = []
         for result in results["results"]["bindings"]:
             skills_raw = result["skills"]["value"]
-            skills = [skill for skill in skills_raw.split("|") if skill]
+            job_skills = [skill for skill in skills_raw.split("|") if skill]
             company = result.get("companyName", {}).get("value", "Perusahaan Terdaftar")
             description = result.get("jobDescription", {}).get("value", "Tidak ada deskripsi tersedia.")
             vacancy = result.get("vacancyCount", {}).get("value", "0")
-            jobs.append({
-                "jobTitle": result["jobTitle"]["value"],
-                "company": company,
-                "description": description,
-                "vacancy": vacancy,
-                "skills": skills,
-            })
+            
+            # Only apply AND filtering if use_and is True and we have multiple skills
+            if use_and and len(skills) > 1:
+                search_skills_lower = [s.lower() for s in skills]
+                job_skills_lower = [s.lower() for s in job_skills]
+                
+                # Check if ALL searched skills are in this job's skills
+                if all(any(search_skill in job_skill for job_skill in job_skills_lower) for search_skill in search_skills_lower):
+                    jobs.append({
+                        "jobTitle": result["jobTitle"]["value"],
+                        "company": company,
+                        "description": description,
+                        "vacancy": vacancy,
+                        "skills": job_skills,
+                    })
+            else:
+                # OR logic: include all jobs returned by the query
+                jobs.append({
+                    "jobTitle": result["jobTitle"]["value"],
+                    "company": company,
+                    "description": description,
+                    "vacancy": vacancy,
+                    "skills": job_skills,
+                })
         return jobs
     except Exception as e:
         raise ConnectionError(f"Error koneksi ke Fuseki: {e}")

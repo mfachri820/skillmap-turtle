@@ -76,6 +76,13 @@ streamlit run app.py
 
 Buka browser ke alamat yang ditampilkan oleh Streamlit, biasanya `http://localhost:8501`.
 
+Jangan lupa untuk menjalankan Fuseki melalui server anda.
+
+```powershell
+cd "your directory/apache-jena-fuseki-6.1.0"
+.\fuseki-server.bat
+```
+
 ## Catatan
 
 - `AI Assistant` dibuat untuk berdiskusi tentang apa yang kamu sukai, bukan sekadar mesin pencari job.
