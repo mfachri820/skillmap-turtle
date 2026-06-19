@@ -89,6 +89,10 @@ cd "your directory/apache-jena-fuseki-6.1.0"
 - Gunakan input yang berfokus pada ketertarikan, pengalaman, dan aktivitas yang memberi energi.
 - Jika Fuseki tidak bisa dihubungi, pastikan servernya menyala dan dataset sudah di-load.
 
+## Author
+- 140810230023 | Muhammad Fachri
+- 140810230003 | Adelia Felisha
+
 ## Troubleshooting
 
 - `ConnectionError` saat mengakses Fuseki: periksa `FUSEKI_ENDPOINT` dan status Fuseki
